@@ -14,11 +14,11 @@ def add_student(student):
 
     cursor.execute(
         query,
-
         (student.name,
         student.age,
         student.email))
     conn.commit()
+    cursor.close()
     conn.close()
 
 def view_students():
@@ -30,4 +30,5 @@ def view_students():
 
     for s in students:
         print(s)
+    cursor.close()
     conn.close()
