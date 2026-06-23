@@ -1,5 +1,3 @@
-from pickle import NONE
-
 from models.student import Student
 from services.student_services import *
 
