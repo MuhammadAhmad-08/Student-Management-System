@@ -16,8 +16,13 @@ while True:
 
     choice=input("Enter choice: ")
     if choice=="1":
-        student_id=int(input("NEW ID: "))
-        name=input("Name: ").title()
+        while True:
+            student_id=int(input("NEW ID: "))
+            if not search_student(student_id):
+                break
+            print("Student ID already exists. Please enter a different ID.")
+
+        name=input("Name: ").title().strip()
         age=int(input("Age: "))
         email=input("Email: ").replace(" ","")
 
