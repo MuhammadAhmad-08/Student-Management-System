@@ -1,4 +1,6 @@
-import models.student
+from pickle import NONE
+
+from models.student import Student
 from services.student_services import *
 
 while True:
@@ -14,13 +16,13 @@ while True:
 
     choice=input("Enter choice: ")
     if choice=="1":
-        id=int(input("NEW ID: "))
-        name=input("Name: ")
+        student_id=int(input("NEW ID: "))
+        name=input("Name: ").title()
         age=int(input("Age: "))
-        email=input("Email: ")
+        email=input("Email: ").replace(" ","")
 
-        student=models.student.Student(
-            id,
+        student=Student(
+            student_id,
             name,
             age,
             email)
@@ -32,15 +34,16 @@ while True:
 
 
     elif choice=="3":
-        sid=int(input("Enter Student ID to Update info:"))
-        name=input("Name:")
+        student_id=int(input("Enter Student ID to Update info:"))
+        print("Student Details:",search_student(student_id))
+        name=input("Name:").title()
         age=int(input("Age:"))
-        email=input("Email:")
-        student=models.student.Student(
-            student_id,
+        email=input("Email:").replace(" ","")
+        student=Student(
             name,
             age,
             email,
+            student_id
         )
         update_student(student)
         print("Student Updated Successfully")
