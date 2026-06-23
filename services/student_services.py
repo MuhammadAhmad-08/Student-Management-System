@@ -1,5 +1,5 @@
 from database.db import connect
-from models import student
+from models.student import Student
 
 
 def add_student(Student):

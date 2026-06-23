@@ -22,7 +22,7 @@ while True:
 
         name=input("Name: ").title().strip()
         age=int(input("Age: "))
-        email=input("Email: ").replace(" ","")
+        email=input("Email: ").replace(" ","").lower()
 
         student=Student(
             student_id,
@@ -35,13 +35,12 @@ while True:
     elif choice=="2":
         view_students()
 
-
     elif choice=="3":
         student_id=int(input("Enter Student ID to Update info:"))
         print("Student Details:",search_student(student_id))
         name=input("Name:").title()
         age=int(input("Age:"))
-        email=input("Email:").replace(" ","")
+        email=input("Email:").replace(" ","").lower()
         student=Student(
             name,
             age,
